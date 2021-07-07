@@ -206,6 +206,8 @@ Error message and password prompt
 
 <li>$:/plugins/danielo515/2click2edit</li>
 
+<li>$:/plugins/linonetwo/inverse-link-and-folder</li>
+
 <li>$:/plugins/telmiger/details</li>
 
 <li>$:/SiteSubtitle</li>
@@ -508,7 +510,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>下列条目已被导入：
 
-# [[$:/plugins/telmiger/details]]</pre>
+# [[$:/plugins/linonetwo/inverse-link-and-folder]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -543,6 +545,45 @@ Error message and password prompt
             "title": "$:/plugins/danielo515/2click2edit/ui/ViewTemplate",
             "type": "text/vnd.tiddlywiki",
             "text": "&lt;$click&gt;"
+        }
+    }
+}</pre>
+</div>
+<div author="LinOnetwo" core-version="&gt;=5.1.22" dependents="" description="Add inverse link (bi-directional link) and folder information to the bottom of tiddlers" list="readme" plugin-type="plugin" title="$:/plugins/linonetwo/inverse-link-and-folder" type="application/json" version="0.0.2">
+<pre>{
+    "tiddlers": {
+        "$:/plugins/linonetwo/inverse-link-and-folder/infobar": {
+            "title": "$:/plugins/linonetwo/inverse-link-and-folder/infobar",
+            "created": "20200414150455988",
+            "creator": "LinOnetwo",
+            "tags": "$:/tags/ViewTemplate",
+            "type": "text/vnd.tiddlywiki",
+            "text": "&lt;$list filter=\"[all[current]backlinks[]first[]sort[title]]\"&gt;\n\t&lt;label style=\"margin-left:auto;margin-right:auto;width:fit-content;display:block;\"&gt;链入 (other)-&gt;(this)&lt;/label&gt;\n&lt;/$list&gt;\n\n&lt;&lt;inverse-link-and-folder_list-links filter:\"[all[current]backlinks[]]\" class:\"horizontal-list-links\" &gt;&gt;\n\n&lt;$list filter=\"[all[current]tagging[]first[]]\"&gt;\n\t&lt;label style=\"margin-left:auto;margin-right:auto;width:fit-content;display:block;\"&gt;此文件夹中的文件&lt;/label&gt;\n&lt;/$list&gt;\n\n&lt;&lt;inverse-link-and-folder_list-links filter:\"[all[current]tagging[]sort[title]]\" class:\"horizontal-list-links\" &gt;&gt;\n\n&lt;$list filter=\"[all[current]tags[]first[]]\"&gt;\n\t&lt;label style=\"margin-left:auto;margin-right:auto;width:fit-content;display:block;\"&gt;此文件所在的文件夹&lt;/label&gt;\n&lt;/$list&gt;\n\n&lt;&lt;inverse-link-and-folder_list-links filter:\"[all[current]tags[]sort[title]]\" class:\"horizontal-list-links\" &gt;&gt;\n"
+        },
+        "$:/plugins/linonetwo/inverse-link-and-folder/list-link.css": {
+            "title": "$:/plugins/linonetwo/inverse-link-and-folder/list-link.css",
+            "text": ".horizontal-list-links {\n  display: flex;\n  flex-direction: row;\n  flex-wrap: wrap;\n  max-height: 250px;\n  overflow-y: auto;\n  padding: 0;\n}\n.horizontal-list-links li {\n  display: inline-flex;\n  -webkit-box-orient: horizontal;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: row;\n  flex-direction: row;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  position: relative;\n  border: none;\n  border-radius: 3px;\n  -webkit-box-shadow: none;\n  box-shadow: none;\n  background-color: rgba(92, 112, 128, 0.9);\n  min-width: 20px;\n  max-width: 100%;\n  min-height: 20px;\n  line-height: 16px;\n  font-size: 12px;\n  margin: 2px;\n  padding: 2px 6px;\n}\n.horizontal-list-links li:hover {\n  opacity: 0.9;\n}\n.horizontal-list-links li a,\n.horizontal-list-links li a:hover {\n  line-height: unset;\n  background-color: unset;\n  color: #f5f8fa;\n  border: none;\n  padding: 0;\n}\n.horizontal-list-links::-webkit-scrollbar {\n  display: none;\n}\n",
+            "created": "20200408152012622",
+            "creator": "LinOnetwo",
+            "modified": "20200411113543217",
+            "modifier": "LinOnetwo",
+            "tags": "$:/tags/Stylesheet",
+            "type": "text/css"
+        },
+        "$:/plugins/linonetwo/inverse-link-and-folder/list-link": {
+            "title": "$:/plugins/linonetwo/inverse-link-and-folder/list-link",
+            "created": "20200414150455988",
+            "creator": "LinOnetwo",
+            "tags": "$:/tags/Macro",
+            "type": "text/vnd.tiddlywiki",
+            "text": "\\define inverse-link-and-folder_list-links(filter,type:\"ul\",subtype:\"li\",class:\"\",emptyMessage)\n\\whitespace trim\n  &lt;$type$ class=\"$class$\"&gt;\n    &lt;$list filter=\"$filter$\" emptyMessage=&lt;&lt;__emptyMessage__&gt;&gt;&gt;\n      &lt;$subtype$&gt;\n        &lt;$link to={{!!title}}&gt;\n          &lt;$transclude field=\"caption\"&gt;\n            &lt;$view field=\"title\"/&gt;\n          &lt;/$transclude&gt;\n        &lt;/$link&gt;\n      &lt;/$subtype$&gt;\n    &lt;/$list&gt;\n  &lt;/$type$&gt;\n\\end\n"
+        },
+        "$:/plugins/linonetwo/inverse-link-and-folder/readme": {
+            "title": "$:/plugins/linonetwo/inverse-link-and-folder/readme",
+            "created": "20200602150455988",
+            "creator": "LinOnetwo",
+            "type": "text/vnd.tiddlywiki",
+            "text": "!! Features\n\nThis plugin provides these additional info on the bottom of every tiddler:\n\n# other tiddler linking to this tiddler\n# tiddlers in this folder (tagged with this tiddler's title, see tw-locator's document for detail about the tag-based folder structure)\n# folders containing this tiddler (since tag-based folder structure is a Graph, so there may be many)\n\nYou can change [[infobar.tid|$:/plugins/linonetwo/inverse-link-and-folder/infobar]] to add more info.\n\n[[list-link.tid|$:/plugins/linonetwo/inverse-link-and-folder/list-link]] and [[list-link.css|$:/plugins/linonetwo/inverse-link-and-folder/list-link.css]] are styles of that info bar.\n\n!! Credits\n\nThis plugin is inspired by RoamResearch. list-link macro and filter in infobar is learnt from  copy&amp;paste-ing of Jeremy's code and tutorials.\n"
         }
     }
 }</pre>
@@ -650,8 +691,8 @@ Error message and password prompt
 <div title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/LoadedModules</pre>
 </div>
-<div created="20210707105556495" modified="20210707105608927" title="$:/state/tab-1163638994">
-<pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
+<div created="20210707105556495" modified="20210707130724204" title="$:/state/tab-1163638994">
+<pre>$:/core/ui/MoreSideBar/Plugins/Plugins</pre>
 </div>
 <div title="$:/state/tab-1677851421">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -662,14 +703,14 @@ Error message and password prompt
 <div created="20210705061213069" modified="20210705064939911" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210707105512981" modified="20210707105734233" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20210707105512981" modified="20210707130722119" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20210705062012004" modified="20210707121124377" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210705062012004" modified="20210707130719988" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
 <div list="$:/Import 2021年07月07日 政治学通识 自我发展心理学 绘制人生地图 建设高质量关系 启动行为的改变 自我成长 思维偏差" title="$:/StoryList">
 <pre></pre>
