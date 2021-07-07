@@ -258,8 +258,6 @@ Error message and password prompt
 
 <li>$:/theme</li>
 
-<li>$:/themes/telmiger/bricks/baremetal/styles.css</li>
-
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
@@ -523,10 +521,18 @@ Error message and password prompt
 <div created="20210705061333607" modified="20210705061333607" title="$:/GitHub/Username">
 <pre>knownbit</pre>
 </div>
-<div status="complete" title="$:/Import">
+<div created="20210707083614036" modified="20210707083941845" status="complete" title="$:/Import">
 <pre>下列条目已被导入：
 
-# [[$:/themes/telmiger/bricks/baremetal/styles.css]]</pre>
+# [[$:/plugins/telmiger/details/about]]
+# [[$:/plugins/telmiger/details/colours.css]]
+# [[$:/plugins/telmiger/details/details.css]]
+# [[$:/plugins/telmiger/details/details.js]]
+# [[$:/plugins/telmiger/details/icon]]
+# [[$:/plugins/telmiger/details/license]]
+# [[$:/plugins/telmiger/details/readme]]
+# [[$:/plugins/telmiger/DetailsWidget/support]]
+# [[$:/plugins/telmiger/support]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -998,8 +1004,8 @@ https://thomas-elmiger.ch</pre>
 <div title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/LoadedModules</pre>
 </div>
-<div created="20210707083506315" modified="20210707084245836" title="$:/state/tab-1163638994">
-<pre>$:/core/ui/MoreSideBar/Plugins/Theme</pre>
+<div created="20210707083506315" modified="20210707090347472" title="$:/state/tab-1163638994">
+<pre>$:/core/ui/MoreSideBar/Plugins/Plugins</pre>
 </div>
 <div title="$:/state/tab-1677851421">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -1010,23 +1016,20 @@ https://thomas-elmiger.ch</pre>
 <div created="20210705061213069" modified="20210705064939911" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
 </div>
-<div created="20210707083504952" modified="20210707083931496" title="$:/state/tab/moresidebar-1850697562">
+<div created="20210707083504952" modified="20210707090346032" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20210705062012004" modified="20210707081050352" title="$:/state/tab/sidebar--595412856">
+<div created="20210705062012004" modified="20210707090344348" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="$:/Import [[加强政党合作 共谋人民幸福]] 中国史纲 自我成长 政治学通识" title="$:/StoryList">
+<div created="20210707084329397" list="[[加强政党合作 共谋人民幸福]] 中国史纲 自我成长 政治学通识" modified="20210707085237324" title="$:/StoryList">
 <pre></pre>
 </div>
 <div title="$:/theme">
 <pre>$:/themes/tiddlywiki/vanilla</pre>
-</div>
-<div tags="$:/tags/Stylesheet" title="$:/themes/telmiger/bricks/baremetal/styles.css">
-<pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.24-prerelease">
 <pre>{"tiddlers":{"$:/themes/tiddlywiki/snowwhite/base":{"title":"$:/themes/tiddlywiki/snowwhite/base","tags":"[[$:/tags/Stylesheet]]","text":"\\define sidebarbreakpoint-minus-one()\n&lt;$text text={{{ [{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}removesuffix[px]subtract[1]addsuffix[px]] ~[{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}] }}}/&gt;\n\\end\n\n\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline\n\n.tc-sidebar-header {\n\ttext-shadow: 0 1px 0 &lt;&lt;colour sidebar-foreground-shadow&gt;&gt;;\n}\n\n.tc-tiddler-info {\n\t&lt;&lt;box-shadow \"inset 1px 2px 3px rgba(0,0,0,0.1)\"&gt;&gt;\n}\n\n@media screen {\n\t.tc-tiddler-frame {\n\t\t&lt;&lt;box-shadow \"1px 1px 5px rgba(0, 0, 0, 0.3)\"&gt;&gt;\n\t}\n}\n\n@media (max-width: &lt;&lt;sidebarbreakpoint-minus-one&gt;&gt;) {\n\t.tc-tiddler-frame {\n\t\t&lt;&lt;box-shadow none&gt;&gt;\n\t}\n}\n\n.tc-page-controls button svg, .tc-tiddler-controls button svg, .tc-topbar button svg {\n\t&lt;&lt;transition \"fill 150ms ease-in-out\"&gt;&gt;\n}\n\n.tc-tiddler-controls button.tc-selected,\n.tc-page-controls button.tc-selected {\n\t&lt;&lt;filter \"drop-shadow(0px -1px 2px rgba(0,0,0,0.25))\"&gt;&gt;\n}\n\n.tc-tiddler-frame input.tc-edit-texteditor {\n\t&lt;&lt;box-shadow \"inset 0 1px 8px rgba(0, 0, 0, 0.15)\"&gt;&gt;\n}\n\n.tc-edit-tags {\n\t&lt;&lt;box-shadow \"inset 0 1px 8px rgba(0, 0, 0, 0.15)\"&gt;&gt;\n}\n\n.tc-tiddler-frame .tc-edit-tags input.tc-edit-texteditor {\n\t&lt;&lt;box-shadow \"none\"&gt;&gt;\n\tborder: none;\n\toutline: none;\n}\n\ntextarea.tc-edit-texteditor {\n\tfont-family: {{$:/themes/tiddlywiki/vanilla/settings/editorfontfamily}};\n}\n\ncanvas.tc-edit-bitmapeditor  {\n\t&lt;&lt;box-shadow \"2px 2px 5px rgba(0, 0, 0, 0.5)\"&gt;&gt;\n}\n\n.tc-drop-down {\n\tborder-radius: 4px;\n\t&lt;&lt;box-shadow \"2px 2px 10px rgba(0, 0, 0, 0.5)\"&gt;&gt;\n}\n\n.tc-block-dropdown {\n\tborder-radius: 4px;\n\t&lt;&lt;box-shadow \"2px 2px 10px rgba(0, 0, 0, 0.5)\"&gt;&gt;\n}\n\n.tc-modal {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \"0 3px 7px rgba(0,0,0,0.3)\"&gt;&gt;\n}\n\n.tc-modal-footer {\n\tborder-radius: 0 0 6px 6px;\n\t&lt;&lt;box-shadow \"inset 0 1px 0 #fff\"&gt;&gt;;\n}\n\n\n.tc-alert {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \"0 3px 7px rgba(0,0,0,0.6)\"&gt;&gt;\n}\n\n.tc-notification {\n\tborder-radius: 6px;\n\t&lt;&lt;box-shadow \"0 3px 7px rgba(0,0,0,0.3)\"&gt;&gt;\n\ttext-shadow: 0 1px 0 rgba(255,255,255, 0.8);\n}\n\n.tc-sidebar-lists .tc-tab-set .tc-tab-divider {\n\tborder-top: none;\n\theight: 1px;\n\t&lt;&lt;background-linear-gradient \"left, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.0) 100%\"&gt;&gt;\n}\n\n.tc-more-sidebar &gt; .tc-tab-set &gt; .tc-tab-buttons &gt; button {\n\t&lt;&lt;background-linear-gradient \"left, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.1) 100%\"&gt;&gt;\n}\n\n.tc-more-sidebar &gt; .tc-tab-set &gt; .tc-tab-buttons &gt; button.tc-tab-selected {\n\t&lt;&lt;background-linear-gradient \"left, rgba(0,0,0,0.05) 0%, rgba(255,255,255,0.05) 100%\"&gt;&gt;\n}\n\n.tc-message-box img {\n\t&lt;&lt;box-shadow \"1px 1px 3px rgba(0,0,0,0.5)\"&gt;&gt;\n}\n\n.tc-plugin-info {\n\t&lt;&lt;box-shadow \"1px 1px 3px rgba(0,0,0,0.5)\"&gt;&gt;\n}\n"}}}</pre>
@@ -2372,9 +2375,8 @@ E.g.一个长发青年，认为周围人虚伪至极，学习工作都毫无意�
 
 排除掉人的因素，预测效果也不错。</pre>
 </div>
-<div created="20210707081339563" modified="20210707084206390" tags="习大大" title="加强政党合作 共谋人民幸福">
-<pre>
-&lt;$details summary="2021年7月6日习近平在中国共产党与世界政党领导人峰会上的主旨讲话"&gt;
+<div created="20210707081339563" modified="20210707090538726" tags="习大大" title="加强政党合作 共谋人民幸福">
+<pre>&lt;$details summary="2021年7月6日习近平在中国共产党与世界政党领导人峰会上的主旨讲话"&gt;
 
 尊敬的各位政党领导人，
 
@@ -2426,8 +2428,13 @@ E.g.一个长发青年，认为周围人虚伪至极，学习工作都毫无意�
 
 &lt;/$details&gt;
 
+大时代、大格局、大胸怀。 A需要B，B呼唤C。
 
-大时代需要大格局，大格局呼唤大胸怀。从“本国优先”的角度看，世界是狭小拥挤的，时时都是“激烈竞争”。从命运与共的角度看，世界是宽广博大的，处处都有合作机遇。
+大时代需要大格局，大格局呼唤大胸怀。
+
+从“本国优先”的角度看，世界是狭小拥挤的，时时都是“激烈竞争”。
+
+从命运与共的角度看，世界是宽广博大的，处处都有合作机遇。
 
 各国人民都追求和平、发展、公平、正义、民主、自由的全人类共同价值。
 
