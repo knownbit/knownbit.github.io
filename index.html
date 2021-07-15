@@ -959,8 +959,8 @@ width:"18rem"
 <div title="$:/state/tab-1677851421">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210705061211954" modified="20210709011956419" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Info</pre>
+<div created="20210705061211954" modified="20210715131310457" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Saving</pre>
 </div>
 <div created="20210705061213069" modified="20210705064939911" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/GitHub</pre>
@@ -968,13 +968,13 @@ width:"18rem"
 <div created="20210707105512981" modified="20210710170825795" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
-<div created="20210705062012004" modified="20210715025527547" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210705062012004" modified="20210715125809273" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210715111707695" list="思维偏差 尼采" modified="20210715111829287" title="$:/StoryList">
+<div created="20210715111707695" list="$:/ControlPanel [[在Github Pages上搭建Tiddlywiki]] 思维偏差" modified="20210715131308860" title="$:/StoryList">
 <pre></pre>
 </div>
 <div title="$:/theme">
@@ -6189,40 +6189,56 @@ http://wiki.myds.me:5000/mo/sharing/SKG7BRU5j#/</pre>
 
 </pre>
 </div>
-<div created="20210705063740957" modified="20210712155416706" tags="博客" title="在Github Pages上搭建Tiddlywiki">
+<div created="20210705063740957" modified="20210715131656929" tags="博客" title="在Github Pages上搭建Tiddlywiki">
 <pre>Tiddlywiki太好用了，周末用了两天时间，试着将其搭建到我的群晖上，结果发现内网映射很麻烦，速度还很慢。想起我之前在GitHub上搭建了一个博客，研究了一下，发现可行，于是，就有了现在这个网页。我发现，网上居然没有相关的博客讲，分享出来，让更多小伙伴享受这一神兵利器！
 
 
 弄好之后很开心，因为中途遇到几个问题没有参照，凭着勇气搞了下去，终于成功，开心到爆炸。在我弄好之后，我又找到几个英文版的教程，结合我自己的实践，分享给大家。
 
-https://kookma.github.io/TW5-GitHub-Saver/
+目录：
 
-https://kookma.github.io/Tiddlywiki-Travis-CI/
+#申请github账号
+#创建一个仓库，申请token
+#将tiddlywiki上传至仓库
+#使用配置tiddlywiki
 
-https://kookma.github.io/Tiddlywiki-and-GitHub-Pages/
+!申请GitHub账号
 
 
-# 申请GitHub账号，新建仓库，生成GitHub Page
+## 申请GitHub账号
+##新建仓库
 
-仓库名命名为：用户名.github.io可以没有后缀使用
+仓库名命名为username.github.io，page可以既可以使用username.github.io来访问，否则为username.github.io/仓库名。比如我的用户名为mywiki，我的仓库名为mywiki.github.io，我这个仓库的page可以直接使用username.github.io来访问。
 
-生成page：
-https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+##生成GitHub Page
 
-#  将Tiddlywiki模板上传到仓库
+参照GitHub官方做法：https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site
+
+##  将Tiddlywiki模板上传到仓库
 
 空白的中文简体模板：
 https://tiddlywiki.com/languages/zh-Hans/empty.html
 
+你也可以拿来主义，把你喜欢的Wiki页面直接保存为HTML，作为一个冷启动策略。
+
+上传至仓库有个小技巧，你不用学会git命令，直接在仓库下新建一个HTML文件，可以命名为wiki.html（或者index.html），记住这个文件名，后面会用到，将前一步得到的HTML文件内容全选—复制，在粘贴到仓库的新HTML文件里面，保存，即可。
+
+在Page设置里面，将page解析页面设置填入这个文件名。
+
 # 申请Token，配置到Tiddlywiki中
 
-
-申请token
+参照GitHub官方指引申请token
 https://docs.github.com/en/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token
 
-不输入token不能修改！
+打开username.github.io，设置-保存-GitHub保存模块，
+用户名 | 填写你注册的GitHub用户名，
+密码 | 填写你申请到的token，
+目标存储库 | 填写你的仓库，即username/username.github.io，
+用于保存的目标分支	| main
+目标文件的路径 (例如，/wiki/)	| /
+目标文件的文件名称 (例如，index.html)	| index.html
 
-太棒了！
+
 
 
 
@@ -6232,11 +6248,14 @@ XMLHttpRequest错误代码409
 
 不影响使用
 
-!Todo list:
 
-#如何实现登陆，不然所有人都可以保存修改
-#消除保存时候的报错
-#安装一些插件</pre>
+参考文献：
+
+https://kookma.github.io/TW5-GitHub-Saver/
+
+https://kookma.github.io/Tiddlywiki-Travis-CI/
+
+https://kookma.github.io/Tiddlywiki-and-GitHub-Pages/</pre>
 </div>
 <div bag="default" created="20210702012744255" modified="20210702023942335" revision="0" title="噪声" tmap.id="10086d04-179f-439b-baef-5e467ff67ccd" type="text/vnd.tiddlywiki">
 <pre>系统之间个体的差异，叫水平噪声（level noise）。
